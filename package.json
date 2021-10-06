@@ -9,6 +9,7 @@
     "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx --no-error-on-unmatched-pattern --quiet --fix ./src"
   },
   "dependencies": {
+    "@iconify/react": "^3.0.1",
     "antd": "^4.16.13",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
@@ -57,6 +58,7 @@
   "eslintIgnore": [
     "/.eslintrc.js",
     "/vite.config.ts",
-    "/commitlint.config.js"
+    "/commitlint.config.js",
+    "/windi.config.ts"
   ]
 }
