@@ -1,5 +1,11 @@
-function App() {
-  return <div>Hello</div>;
-}
+import { Spin } from 'antd';
+import { Suspense } from 'react';
+import Routes from '@/routes/Routes';
 
-export default App;
+export default function App() {
+  return (
+    <Suspense fallback={<Spin size='large' />}>
+      <Routes />
+    </Suspense>
+  );
+}
