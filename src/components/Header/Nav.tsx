@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import { Link } from 'react-router-dom';
 
 export default function Nav() {
   return (
@@ -7,10 +8,12 @@ export default function Nav() {
         <Icon icon='icon-park:tag' className='wh3' />
         <div className='text3'>标签</div>
       </div>
-      <div className='nav_item'>
-        <Icon icon='icon-park:avatar' className='wh3' />
-        <div className='text3'>关于</div>
-      </div>
+      <Link to='/note/1'>
+        <div className='nav_item'>
+          <Icon icon='icon-park:avatar' className='wh3' />
+          <div className='text3'>关于</div>
+        </div>
+      </Link>
       <a
         href='https://github.com/izypd'
         rel='external nofollow noopener noreferrer'
