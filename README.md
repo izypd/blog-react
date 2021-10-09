@@ -17,3 +17,10 @@ pnpm add -D @types/react-router-dom @types/react-router-config
 pnpm add @iconify/react
 ```
 
+- [ ] 笔记瀑布流、brotli压缩
+
+```shell
+pnpm add @egjs/react-infinitegrid axios date-fns
+pnpm add -D vite-plugin-compression
+```
+
