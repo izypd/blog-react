@@ -25,3 +25,4 @@ pnpm add -D vite-plugin-compression
 ```
 
 - [ ] 设置“关于”的url
+- [ ] 标签气泡
