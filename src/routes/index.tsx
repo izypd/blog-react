@@ -15,7 +15,7 @@ const routes: IRoute[] = [
     exact: true,
   },
   {
-    path: '/note/:id',
+    path: '/note/:noteId',
     component: React.lazy(() => import('@/pages/Note')),
     title: '笔记',
     exact: true,

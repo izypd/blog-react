@@ -1,22 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
-import { Popover, Tag } from 'antd';
+import { Popover } from 'antd';
 import axios from 'axios';
 import type ITag from '@/utils/types/ITag';
+import TagItem from '@/components/TagItem';
 
 export default function Nav() {
   const [tagPop, setTagPop] = useState<JSX.Element>();
   useEffect(() => {
     axios
-      .get('/tag')
+      .get('/api/tag')
       .then((res: any) => {
         const tagList = res.data.data.list;
         const tagPopList = tagList.map((tag: ITag) => (
-          <Tag>
-            <a href={`/tag/${tag.id}`} className='text3'>
-              {tag.label}
-            </a>
-          </Tag>
+          <TagItem tag={tag} classStr='text3' />
         ));
         setTagPop(<div>{tagPopList}</div>);
       })

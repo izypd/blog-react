@@ -25,7 +25,7 @@ export default function InfiniteNote({ tagId }: any) {
       };
     }
     axios
-      .get('/note', {
+      .get('/api/note', {
         params,
       })
       .then((res: any) => {
