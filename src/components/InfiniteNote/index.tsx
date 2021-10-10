@@ -7,17 +7,26 @@ import type INoteCard from '@/utils/types/INoteCard';
 import type INoteListItem from '@/utils/types/INoteListItem';
 import NoteCard from './NoteCard';
 
-export default function InfiniteNote() {
+export default function InfiniteNote({ tagId }: any) {
   const [items, setItems] = useState<INoteCard[]>([]);
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState(0);
 
   useEffect(() => {
+    let params = {};
+    if (tagId === 0) {
+      params = {
+        page,
+      };
+    } else {
+      params = {
+        page,
+        tagId,
+      };
+    }
     axios
       .get('/note', {
-        params: {
-          page,
-        },
+        params,
       })
       .then((res: any) => {
         if (pages === 0) {

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
-import { Link } from 'react-router-dom';
 import { Popover, Tag } from 'antd';
 import axios from 'axios';
 import type ITag from '@/utils/types/ITag';
@@ -14,9 +13,9 @@ export default function Nav() {
         const tagList = res.data.data.list;
         const tagPopList = tagList.map((tag: ITag) => (
           <Tag>
-            <Link to={`/tag/${tag.id}`} className='text3'>
+            <a href={`/tag/${tag.id}`} className='text3'>
               {tag.label}
-            </Link>
+            </a>
           </Tag>
         ));
         setTagPop(<div>{tagPopList}</div>);
@@ -34,12 +33,12 @@ export default function Nav() {
           <div className='text3'>标签</div>
         </div>
       </Popover>
-      <Link to='/note/1'>
+      <a href='/note/1'>
         <div className='nav_item'>
           <Icon icon='icon-park:avatar' className='wh3' />
           <div className='text3'>关于</div>
         </div>
-      </Link>
+      </a>
       <a
         href='https://github.com/izypd'
         rel='external nofollow noopener noreferrer'

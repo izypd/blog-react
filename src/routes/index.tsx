@@ -9,6 +9,12 @@ const routes: IRoute[] = [
     exact: true,
   },
   {
+    path: '/tag/:tagId',
+    component: React.lazy(() => import('@/pages/Home')),
+    title: '相应标签的笔记列表',
+    exact: true,
+  },
+  {
     path: '/note/:id',
     component: React.lazy(() => import('@/pages/Note')),
     title: '笔记',

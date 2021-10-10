@@ -1,10 +1,9 @@
-import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 
 export default function NoteCard({ info }: any) {
   return (
-    <Link
-      to={`/note/${info.id}`}
+    <a
+      href={`/note/${info.id}`}
       className='note_card'
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${info.imgUrl})`,
@@ -20,6 +19,6 @@ export default function NoteCard({ info }: any) {
           <div className='text4'>{info.label.join(' ')}</div>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }
