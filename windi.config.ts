@@ -17,6 +17,7 @@ export default defineConfig({
       'flex items-center justify-between h-20 p-8 mx-auto md:(h-40 p-16) xl:(h-60 p-24) 2xl:px-48',
     note_card:
       'flex_center_p0 w-full h-40vw bg-center bg-no-repeat bg-cover flex-col text-[#f3f2ee] color-[#f3f2ee] space-y-4 md:space-y-8 xl:space-y-12',
+    note_width: 'max-w-50rem mx-auto',
   },
   theme: {
     fontSize: {
@@ -35,4 +36,5 @@ export default defineConfig({
     include: ['index.html', 'src/**/*.{vue,html,jsx,tsx}'],
     exclude: ['node_modules/**/*', '.git/**/*'],
   },
+  plugins: [require('windicss/plugin/typography')],
 });

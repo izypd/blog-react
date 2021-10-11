@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import axios from 'axios';
 import getTimeDistance from '@/utils/getTimeDistance';
 import type ITag from '@/utils/types/ITag';
 import TagItem from '@/components/TagItem';
+import NoteContent from './NoteContent';
 
 export default function NoteInfo({ noteId }: any) {
   const [title, setTitle] = useState('');
@@ -37,7 +36,7 @@ export default function NoteInfo({ noteId }: any) {
         <div>{time}</div>
         {tagComponent}
       </div>
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
+      <NoteContent content={markdown} />
     </div>
   );
 }

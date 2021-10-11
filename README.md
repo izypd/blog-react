@@ -37,3 +37,11 @@ pnpm add -D vite-plugin-compression
 pnpm add react-markdown remark-gfm
 ```
 
+- [ ] 代码高亮、笔记内容排版
+
+```shell
+pnpm add prismjs
+pnpm add -D @types/prismjs
+pnpm add vite-plugin-prismjs
+```
+

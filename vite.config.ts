@@ -4,6 +4,7 @@ import path from 'path';
 // import styleImport from 'vite-plugin-style-import';
 import WindiCSS from 'vite-plugin-windicss';
 import viteCompression from 'vite-plugin-compression';
+import prismjsPlugin from 'vite-plugin-prismjs';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -24,6 +25,18 @@ export default defineConfig({
     viteCompression({
       ext: '.br',
       algorithm: 'brotliCompress',
+    }),
+    prismjsPlugin({
+      languages: ['javascript', 'css', 'markup', 'typescript', 'python'],
+      plugins: [
+        'toolbar',
+        'show-language',
+        'copy-to-clipboard',
+        'match-braces',
+        'line-numbers',
+      ],
+      theme: 'solarizedlight',
+      css: true,
     }),
   ],
   resolve: {
