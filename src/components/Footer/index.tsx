@@ -14,7 +14,8 @@ export default function Footer() {
         rel='external nofollow noopener noreferrer'
         target='_blank'>
         blog-react
-      </a>{' '}
+      </a>
+      {' 、 '}
       <a
         href='https://github.com/izypd/blog-nest'
         rel='external nofollow noopener noreferrer'

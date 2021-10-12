@@ -1,21 +1,12 @@
-import { Layout, Typography } from 'antd';
-import React from 'react';
 import { renderRoutes } from 'react-router-config';
-
 import type IRoute from '@/routes/IRoute';
+import Footer from '@/components/Footer';
 
-const { Content, Footer } = Layout;
-const { Text } = Typography;
-
-const UserLayout: React.FC<{ route: IRoute }> = ({ route }) => (
-  <Layout>
-    <Content>{renderRoutes(route.routes)}</Content>
-    <Footer>
-      <Text>
-        © izypd <Text type='secondary'>由 React 、 Nest 助力</Text>
-      </Text>
-    </Footer>
-  </Layout>
-);
-
-export default UserLayout;
+export default function UserLayout({ route }: { route: IRoute }) {
+  return (
+    <div className='bg_mi pt-8 px-8'>
+      <div className='user'>{renderRoutes(route.routes)}</div>
+      <Footer />
+    </div>
+  );
+}
