@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import Header from '@/components/Header';
 import NoteInfo from '@/components/NoteInfo';
+import Footer from '@/components/Footer';
 
 export default function Note() {
   const { noteId } = useParams<{ noteId: string }>();
@@ -8,6 +9,7 @@ export default function Note() {
     <div className='bg_mi'>
       <Header />
       <NoteInfo noteId={Number(noteId)} />
+      <Footer />
     </div>
   );
 }
