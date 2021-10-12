@@ -45,3 +45,5 @@ pnpm add -D @types/prismjs
 pnpm add vite-plugin-prismjs
 ```
 
+- [ ] 笔记标题、时间、标签排版；笔记内容图片宽度
+
