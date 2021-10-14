@@ -59,3 +59,8 @@ pnpm add vite-plugin-prismjs
 pnpm rm react-router-config
 pnpm rm -D @types/react-router-config
 ```
+
+## 管理页
+
+- [ ] 路由鉴权：已登录才能访问管理页面；重构用户页路由
+

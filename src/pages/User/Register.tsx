@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import { Form, Input, Button, message } from 'antd';
 import axios from 'axios';
 import Result from '@/components/Result';
+import Footer from '@/components/Footer';
 
 export default function Register() {
   const [form] = Form.useForm();
@@ -26,34 +27,39 @@ export default function Register() {
   }, []);
 
   return (
-    <Form form={form} name='register'>
-      <Form.Item
-        name='username'
-        rules={[{ required: true, message: '请输入用户名' }]}>
-        <Input placeholder='用户名' />
-      </Form.Item>
+    <div className='bg_mi pt-8 px-8'>
+      <div className='user'>
+        <Form form={form} name='register'>
+          <Form.Item
+            name='username'
+            rules={[{ required: true, message: '请输入用户名' }]}>
+            <Input placeholder='用户名' />
+          </Form.Item>
 
-      <Form.Item
-        name='password'
-        rules={[{ required: true, message: '请输入密码' }]}>
-        <Input.Password placeholder='密码' />
-      </Form.Item>
+          <Form.Item
+            name='password'
+            rules={[{ required: true, message: '请输入密码' }]}>
+            <Input.Password placeholder='密码' />
+          </Form.Item>
 
-      <Form.Item
-        name='passwordRepeat'
-        rules={[{ required: true, message: '请再输密码' }]}>
-        <Input.Password placeholder='再输密码' />
-      </Form.Item>
+          <Form.Item
+            name='passwordRepeat'
+            rules={[{ required: true, message: '请再输密码' }]}>
+            <Input.Password placeholder='再输密码' />
+          </Form.Item>
 
-      <Form.Item>
-        <Button
-          className='w-full'
-          type='primary'
-          shape='round'
-          onClick={onRegister}>
-          注册
-        </Button>
-      </Form.Item>
-    </Form>
+          <Form.Item>
+            <Button
+              className='w-full'
+              type='primary'
+              shape='round'
+              onClick={onRegister}>
+              注册
+            </Button>
+          </Form.Item>
+        </Form>
+      </div>
+      <Footer />
+    </div>
   );
 }
