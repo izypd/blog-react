@@ -24,7 +24,7 @@ export default function Nav() {
 
   return (
     <div className='nav'>
-      <Popover content={tagPop}>
+      <Popover placement='bottomRight' content={tagPop}>
         <div className='nav_item'>
           <Icon icon='icon-park:tag' className='wh3' />
           <div className='text3'>标签</div>

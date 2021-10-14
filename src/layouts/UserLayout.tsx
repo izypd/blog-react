@@ -1,11 +1,22 @@
-import { renderRoutes } from 'react-router-config';
-import type IRoute from '@/routes/IRoute';
+import { Route } from 'react-router-dom';
+import { lazy } from 'react';
 import Footer from '@/components/Footer';
 
-export default function UserLayout({ route }: { route: IRoute }) {
+export default function UserLayout() {
   return (
     <div className='bg_mi pt-8 px-8'>
-      <div className='user'>{renderRoutes(route.routes)}</div>
+      <div className='user'>
+        <Route
+          path='/user/login'
+          exact
+          component={lazy(() => import('@/pages/User/Login'))}
+        />
+        <Route
+          path='/user/register'
+          exact
+          component={lazy(() => import('@/pages/User/Register'))}
+        />
+      </div>
       <Footer />
     </div>
   );

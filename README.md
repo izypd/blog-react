@@ -53,3 +53,9 @@ pnpm add vite-plugin-prismjs
 - [ ] 注册页
 - [ ] 登录页
 
+- [ ] 不使用react-router-config、修改弹出tag列表的位置
+
+```shell
+pnpm rm react-router-config
+pnpm rm -D @types/react-router-config
+```
