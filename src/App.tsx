@@ -1,21 +1,26 @@
 import { Spin } from 'antd';
-import { Suspense, lazy, useState, useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+import { Suspense, lazy, useState, useEffect, useMemo } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import getTokenHeader from '@/utils/getTokenHeader';
 
 export default function App() {
   const Home = lazy(() => import('@/pages/Home'));
+
   const [auth, setAuth] = useState(false);
+
+  const needAuth = useMemo(() => {
+    if (auth) {
+      return (
+        <Route path='/admin' component={lazy(() => import('@/pages/Admin'))} />
+      );
+    }
+    return <Route path='/admin' component={Home} />;
+  }, [auth]);
 
   useEffect(() => {
     axios
-      .get('/auth', getTokenHeader())
+      .get('/api/user/auth', getTokenHeader())
       .then(() => {
         setAuth(true);
       })
@@ -42,14 +47,7 @@ export default function App() {
             path='/register'
             component={lazy(() => import('@/pages/User/Register'))}
           />
-          {auth ? (
-            <Route
-              path='/admin'
-              component={lazy(() => import('@/pages/Admin'))}
-            />
-          ) : (
-            <Redirect to='/' />
-          )}
+          {needAuth}
           <Route
             path='*'
             component={lazy(() => import('@/pages/Error/NotFound'))}
