@@ -30,7 +30,7 @@ export default function Nav() {
           <div className='text3'>标签</div>
         </div>
       </Popover>
-      <a href='/note/1'>
+      <a href='/cv'>
         <div className='nav_item'>
           <Icon icon='icon-park:avatar' className='wh3' />
           <div className='text3'>关于</div>

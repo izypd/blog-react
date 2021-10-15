@@ -33,6 +33,7 @@ export default function App() {
     <Suspense fallback={<Spin size='large' />}>
       <Router>
         <Switch>
+          <Route path='/cv' component={lazy(() => import('@/pages/CV'))} />
           <Route path='/' exact component={Home} />
           <Route path='/tag/:tagId' component={Home} />
           <Route

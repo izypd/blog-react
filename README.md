@@ -28,6 +28,7 @@ pnpm add -D vite-plugin-compression
 - [ ] 标签气泡
 - [ ] 回到顶部
 - [ ] 相应标签的笔记列表
+- [ ] 简历页
 
 ## 笔记页
 
