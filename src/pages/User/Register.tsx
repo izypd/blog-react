@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
-import { Form, Input, Button, message } from 'antd';
+import { Form, Input, Button } from 'antd';
 import axios from 'axios';
-import Result from '@/components/Result';
 import Footer from '@/components/Footer';
+import showFeedback from '@/utils/showFeedback';
 
 export default function Register() {
   const [form] = Form.useForm();
@@ -13,13 +13,7 @@ export default function Register() {
       .post('/api/user/register', usernameAndPasswords)
       .then((res) => {
         const text = res.data.data.info;
-        const result = {
-          text,
-          buttonText: '去登录',
-          buttonHref: '/user/login',
-        };
-        const resultComponent = <Result result={result} />;
-        message.success(resultComponent, 10);
+        showFeedback(text, '去登录', '/login');
       })
       .catch((error) => {
         console.log(error);
