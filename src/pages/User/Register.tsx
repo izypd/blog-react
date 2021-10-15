@@ -21,7 +21,7 @@ export default function Register() {
   }, []);
 
   return (
-    <div className='bg_mi pt-8 px-8'>
+    <div className='user_layout'>
       <div className='user'>
         <Form form={form} name='register'>
           <Form.Item
