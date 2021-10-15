@@ -2,7 +2,6 @@ import { useState, useCallback, lazy } from 'react';
 import { Route, Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import { Icon } from '@iconify/react';
-import Footer from '@/components/Footer';
 
 const { Content, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -35,7 +34,7 @@ export default function Admin() {
           </SubMenu>
         </Menu>
       </Sider>
-      <Layout>
+      <Layout className='px-16 pt-16'>
         <Content>
           <Route
             exact
@@ -48,7 +47,6 @@ export default function Admin() {
             component={lazy(() => import('./Note/ManageNote'))}
           />
         </Content>
-        <Footer />
       </Layout>
     </Layout>
   );

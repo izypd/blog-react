@@ -114,7 +114,7 @@ export default function CreateNote() {
         options={{
           height: 1000,
           preview: {
-            maxWidth: 1000,
+            maxWidth: 800,
           },
         }}
       />

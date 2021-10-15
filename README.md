@@ -75,3 +75,4 @@ pnpm rm -D @types/react-router-config
 pnpm add vditor react-vditor
 ```
 
+- [ ] 修改新建笔记页样式
