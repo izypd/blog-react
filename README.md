@@ -64,4 +64,5 @@ pnpm rm -D @types/react-router-config
 
 - [ ] 路由鉴权：已登录才能访问管理页面；重构用户页路由
 - [ ] 修复admin页鉴权的bug；admin页的布局
+- [ ] 点击新建笔记、管理笔记跳转到相应页
 

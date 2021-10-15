@@ -1,4 +1,5 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, lazy } from 'react';
+import { Route, Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import { Icon } from '@iconify/react';
 import Footer from '@/components/Footer';
@@ -25,14 +26,27 @@ export default function Admin() {
             key='note'
             icon={<Icon icon='icon-park-outline:notes' />}
             title='笔记'>
-            <Menu.Item key='create_note'>新增笔记</Menu.Item>
-            <Menu.Item key='manage_note'>管理笔记</Menu.Item>
+            <Menu.Item key='create_note'>
+              <Link to='/admin/note/create'>新增笔记</Link>
+            </Menu.Item>
+            <Menu.Item key='manage_note'>
+              <Link to='/admin/note/manage'>管理笔记</Link>
+            </Menu.Item>
           </SubMenu>
         </Menu>
       </Sider>
       <Layout>
         <Content>
-          <div>内容</div>
+          <Route
+            exact
+            path='/admin/note/create'
+            component={lazy(() => import('./Note/CreateNote'))}
+          />
+          <Route
+            exact
+            path='/admin/note/manage'
+            component={lazy(() => import('./Note/ManageNote'))}
+          />
         </Content>
         <Footer />
       </Layout>
