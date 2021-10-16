@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { Table, Tag, Button } from 'antd';
 import axios from 'axios';
+import { parseISO } from 'date-fns';
 import type { ColumnsType } from 'antd/es/table';
 import type INoteListItem from '@/utils/types/INoteListItem';
 import toDayTime from '@/utils/toDayTime';
@@ -31,11 +32,33 @@ const columns: ColumnsType<INoteListItem> = [
     title: '编辑于',
     dataIndex: 'updateTime',
     render: (_, record) => toDayTime(record.updateTime),
+    sorter: (a, b) => {
+      const dateA = parseISO(a.updateTime);
+      const dateB = parseISO(b.updateTime);
+      if (dateA < dateB) {
+        return -1;
+      }
+      if (dateA > dateB) {
+        return 1;
+      }
+      return 0;
+    },
   },
   {
     title: '创建于',
     dataIndex: 'createTime',
     render: (_, record) => toDayTime(record.createTime),
+    sorter: (a, b) => {
+      const dateA = parseISO(a.createTime);
+      const dateB = parseISO(b.createTime);
+      if (dateA < dateB) {
+        return -1;
+      }
+      if (dateA > dateB) {
+        return 1;
+      }
+      return 0;
+    },
   },
   {
     title: '标题图片',
