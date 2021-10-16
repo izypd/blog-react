@@ -76,3 +76,6 @@ pnpm add vditor react-vditor
 ```
 
 - [ ] 修改新建笔记页样式
+
+- [ ] 管理笔记页：删除单个笔记
+
