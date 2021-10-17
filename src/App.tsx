@@ -6,6 +6,7 @@ import getTokenHeader from '@/utils/getTokenHeader';
 
 export default function App() {
   const Home = lazy(() => import('@/pages/Home'));
+  const NotFound = lazy(() => import('@/pages/Error/NotFound'));
 
   const [auth, setAuth] = useState(false);
 
@@ -15,7 +16,7 @@ export default function App() {
         <Route path='/admin' component={lazy(() => import('@/pages/Admin'))} />
       );
     }
-    return <Route path='/admin' component={Home} />;
+    return <Route path='/admin' component={NotFound} />;
   }, [auth]);
 
   useEffect(() => {
@@ -49,10 +50,7 @@ export default function App() {
             component={lazy(() => import('@/pages/User/Register'))}
           />
           {needAuth}
-          <Route
-            path='*'
-            component={lazy(() => import('@/pages/Error/NotFound'))}
-          />
+          <Route path='*' component={NotFound} />
         </Switch>
       </Router>
     </Suspense>
