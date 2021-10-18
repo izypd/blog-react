@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Table, Tag, Button } from 'antd';
 import axios from 'axios';
 import { parseISO } from 'date-fns';
@@ -79,6 +80,8 @@ const columns: ColumnsType<INoteListItem> = [
 ];
 
 export default function ManageNote() {
+  const history = useHistory();
+
   const [selectedRowKeys, setSelectedRowKeys] = useState<any[]>([]);
   const [data, setData] = useState<INoteListItem[]>([]);
   const [needRefresh, setNeedRefresh] = useState(false);
@@ -126,6 +129,10 @@ export default function ManageNote() {
       });
   };
 
+  const onEdit = () => {
+    history.push(`/admin/note/edit/${selectedRowKeys[0]}`);
+  };
+
   const rowSelection = {
     selectedRowKeys,
     onChange: onSelectChange,
@@ -138,7 +145,14 @@ export default function ManageNote() {
 
   return (
     <>
-      <div>
+      <div className='admin_button'>
+        <Button
+          type='primary'
+          shape='round'
+          onClick={onEdit}
+          disabled={!hasSelected}>
+          编辑
+        </Button>
         <Button
           type='primary'
           shape='round'
@@ -154,6 +168,7 @@ export default function ManageNote() {
         rowSelection={rowSelection}
         columns={columns}
         dataSource={data}
+        pagination={{ pageSize: 100 }}
       />
     </>
   );

@@ -23,6 +23,7 @@ export default defineConfig({
     note_title: 'flex_center_p0 note_width flex-col space-y-4',
     user: 'max-w-20rem mx-8 mt-8 p-8 bg-white border-2 border-solid rounded-2xl border-gray-200',
     user_layout: 'bg_mi flex_center_p0 flex-col h-screen',
+    admin_button: 'flex flex-row items-center justify-start space-x-2 p-2',
   },
   theme: {
     fontSize: {

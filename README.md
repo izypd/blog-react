@@ -79,3 +79,10 @@ pnpm add vditor react-vditor
 - [ ] 管理笔记页：删除单个笔记
 - [ ] 管理笔记页：按创建、编辑时间排序
 
+- [ ] 管理笔记页：编辑笔记；将markdown编辑器换为@uiw/react-md-editor
+
+```shell
+pnpm rm vditor react-vditor
+pnpm add @uiw/react-md-editor
+```
+

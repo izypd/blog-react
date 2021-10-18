@@ -1,52 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import { Form, Input, Button, Select } from 'antd';
 import axios from 'axios';
 import MDEditor from '@uiw/react-md-editor';
 import getTokenHeader from '@/utils/getTokenHeader';
 import showFeedback from '@/utils/showFeedback';
 
-export default function CreateNote() {
+export default function EditNote() {
+  const { noteId } = useParams<{ noteId: string }>();
+
   const [form] = Form.useForm();
   const [markdownText, setMarkdownText] = useState('');
   const [tagList, setTagList] = useState([]);
 
   const tags: any = useRef([]);
   const tokenOption = useRef(getTokenHeader());
-
-  useEffect(() => {
-    axios
-      .get('/api/tag')
-      .then((res: any) => {
-        const { list } = res.data.data;
-        const labelValueList = list.map((item: any) => ({
-          label: item.label,
-          value: String(item.id),
-        }));
-        setTagList(labelValueList);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  const onCreateNote = () => {
-    const body = {
-      title: form.getFieldValue('title'),
-      imgUrl: form.getFieldValue('imgUrl'),
-      content: markdownText,
-      tags: tags.current,
-    };
-
-    axios
-      .post('/api/note', body, tokenOption.current)
-      .then((res: any) => {
-        const text = res.data.data.info;
-        showFeedback(text, '再写一篇', '/admin/note/create');
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
 
   const onAddTag = (value: string[]) => {
     const newValue: string = value[value.length - 1];
@@ -72,9 +40,65 @@ export default function CreateNote() {
     }
   };
 
+  const onEditNote = () => {
+    const body = {
+      title: form.getFieldValue('title'),
+      imgUrl: form.getFieldValue('imgUrl'),
+      content: markdownText,
+      tags: tags.current,
+    };
+
+    axios
+      .put(`/api/note/${noteId}`, body, tokenOption.current)
+      .then((res: any) => {
+        const text = res.data.data.info;
+        showFeedback(text, '回管理页面', '/admin/note/manage');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    axios
+      .get('/api/tag')
+      .then((res: any) => {
+        const { list } = res.data.data;
+        const labelValueList = list.map((item: any) => ({
+          label: item.label,
+          value: String(item.id),
+        }));
+        setTagList(labelValueList);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`/api/note/${noteId}`)
+      .then((res: any) => {
+        const note = res.data.data.info;
+        const tagValues = note.tags.map((tag: any) => String(tag.id));
+        form.setFieldsValue({
+          title: note.title,
+          imgUrl: note.imgUrl,
+          tag: tagValues,
+        });
+        for (let i = 0; i < tagValues.length; i += 1) {
+          onAddTag([tagValues[i]]);
+        }
+        setMarkdownText(note.content);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <>
-      <Form form={form} name='createNote'>
+      <Form form={form} name='editNote'>
         <Form.Item
           label='标题'
           name='title'
@@ -103,8 +127,8 @@ export default function CreateNote() {
         </Form.Item>
 
         <Form.Item>
-          <Button type='primary' shape='round' onClick={onCreateNote}>
-            创建
+          <Button type='primary' shape='round' onClick={onEditNote}>
+            编辑
           </Button>
         </Form.Item>
       </Form>

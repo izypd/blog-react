@@ -46,6 +46,11 @@ export default function Admin() {
             path='/admin/note/manage'
             component={lazy(() => import('./Note/ManageNote'))}
           />
+          <Route
+            exact
+            path='/admin/note/edit/:noteId'
+            component={lazy(() => import('./Note/EditNote'))}
+          />
         </Content>
       </Layout>
     </Layout>

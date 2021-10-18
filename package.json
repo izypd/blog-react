@@ -11,6 +11,7 @@
   "dependencies": {
     "@egjs/react-infinitegrid": "^4.1.0",
     "@iconify/react": "^3.0.1",
+    "@uiw/react-md-editor": "^3.6.5",
     "antd": "^4.16.13",
     "axios": "^0.22.0",
     "date-fns": "^2.25.0",
@@ -19,9 +20,7 @@
     "react-dom": "^17.0.0",
     "react-markdown": "^7.0.1",
     "react-router-dom": "^5.3.0",
-    "react-vditor": "^0.2.1",
     "remark-gfm": "^3.0.0",
-    "vditor": "^3.8.7",
     "vite-plugin-prismjs": "^0.0.8"
   },
   "devDependencies": {
