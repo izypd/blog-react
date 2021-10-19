@@ -86,3 +86,11 @@ pnpm rm vditor react-vditor
 pnpm add @uiw/react-md-editor
 ```
 
+## 其他
+
+- [ ] PWGAN
+
+```shell
+pnpm add react-compare-image
+```
+

@@ -24,6 +24,10 @@ export default defineConfig({
     user: 'max-w-20rem mx-8 mt-8 p-8 bg-white border-2 border-solid rounded-2xl border-gray-200',
     user_layout: 'bg_mi flex_center_p0 flex-col h-screen',
     admin_button: 'flex flex-row items-center justify-start space-x-2 p-2',
+    icon_size: 'w-48 h-48',
+    icon_group: 'flex flex-col space-y-8',
+    icon_grid:
+      'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-items-center gap-8 py-8',
   },
   theme: {
     fontSize: {

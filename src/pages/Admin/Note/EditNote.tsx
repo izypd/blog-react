@@ -86,9 +86,9 @@ export default function EditNote() {
           imgUrl: note.imgUrl,
           tag: tagValues,
         });
-        for (let i = 0; i < tagValues.length; i += 1) {
-          onAddTag([tagValues[i]]);
-        }
+        tagValues.forEach((tagValue: string) => {
+          onAddTag([tagValue]);
+        });
         setMarkdownText(note.content);
       })
       .catch((error) => {

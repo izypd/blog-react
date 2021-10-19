@@ -35,6 +35,10 @@ export default function App() {
       <Router>
         <Switch>
           <Route path='/cv' component={lazy(() => import('@/pages/CV'))} />
+          <Route
+            path='/pwgan'
+            component={lazy(() => import('@/pages/PWGAN'))}
+          />
           <Route path='/' exact component={Home} />
           <Route path='/tag/:tagId' component={Home} />
           <Route
