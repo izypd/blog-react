@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 import { Form, Input, Button } from 'antd';
 import axios from 'axios';
-import Footer from '@/components/Footer';
 import showFeedback from '@/utils/showFeedback';
 
 export default function Register() {
@@ -53,7 +52,6 @@ export default function Register() {
           </Form.Item>
         </Form>
       </div>
-      <Footer />
     </div>
   );
 }

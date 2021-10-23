@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Form, Input, Button } from 'antd';
 import axios from 'axios';
-import Footer from '@/components/Footer';
 
 export default function Login() {
   const history = useHistory();
@@ -49,7 +48,6 @@ export default function Login() {
           </Form.Item>
         </Form>
       </div>
-      <Footer />
     </div>
   );
 }
