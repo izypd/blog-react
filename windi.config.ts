@@ -20,7 +20,7 @@ export default defineConfig({
     note_card:
       'flex_center_p0 w-full h-40vw bg-center bg-no-repeat bg-cover flex-col text-[#f3f2ee] color-[#f3f2ee] space-y-4 md:space-y-8 xl:space-y-12',
     note_width: 'max-w-50rem mx-auto',
-    note_title: 'flex_center_p0 note_width flex-col space-y-4',
+    note_title: 'flex_center_p0 note_width flex-col space-y-4 mb-4',
     user: 'max-w-20rem mx-8 mt-8 p-8 bg-white border-2 border-solid rounded-2xl border-gray-200',
     user_layout: 'bg_mi flex_center_p0 flex-col h-screen',
     admin_button: 'flex flex-row items-center justify-start space-x-2 p-2',

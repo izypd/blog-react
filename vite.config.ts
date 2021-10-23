@@ -27,7 +27,14 @@ export default defineConfig({
       algorithm: 'brotliCompress',
     }),
     prismjsPlugin({
-      languages: ['javascript', 'css', 'markup', 'typescript', 'python'],
+      languages: [
+        'javascript',
+        'css',
+        'markup',
+        'typescript',
+        'python',
+        'bash',
+      ],
       plugins: [
         'toolbar',
         'show-language',
