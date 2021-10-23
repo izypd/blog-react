@@ -7,6 +7,10 @@ const { Content, Sider } = Layout;
 const { SubMenu } = Menu;
 
 export default function Admin() {
+  const CreateNote = lazy(() => import('./Note/CreateNote'));
+  const ManageNote = lazy(() => import('./Note/ManageNote'));
+  const EditNote = lazy(() => import('./Note/EditNote'));
+
   const [collapsed, setCollapsed] = useState(false);
 
   const onCollapse = useCallback((collapse) => {
@@ -39,17 +43,26 @@ export default function Admin() {
           <Route
             exact
             path='/admin/note/create'
-            component={lazy(() => import('./Note/CreateNote'))}
+            render={() => {
+              document.title = '新增笔记';
+              return <CreateNote />;
+            }}
           />
           <Route
             exact
             path='/admin/note/manage'
-            component={lazy(() => import('./Note/ManageNote'))}
+            render={() => {
+              document.title = '管理笔记';
+              return <ManageNote />;
+            }}
           />
           <Route
             exact
             path='/admin/note/edit/:noteId'
-            component={lazy(() => import('./Note/EditNote'))}
+            render={() => {
+              document.title = '编辑笔记';
+              return <EditNote />;
+            }}
           />
         </Content>
       </Layout>

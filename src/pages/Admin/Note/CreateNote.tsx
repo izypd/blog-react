@@ -1,33 +1,24 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
 import { Form, Input, Button, Select } from 'antd';
 import axios from 'axios';
 import MDEditor from '@uiw/react-md-editor';
 import getTokenHeader from '@/utils/getTokenHeader';
 import showFeedback from '@/utils/showFeedback';
+import TagContext from '@/utils/context/TagContext';
 
 export default function CreateNote() {
   const [form] = Form.useForm();
   const [markdownText, setMarkdownText] = useState('');
-  const [tagList, setTagList] = useState([]);
+
+  const tagList = useContext(TagContext);
+
+  const tagOptions = tagList.map((item: any) => ({
+    label: item.label,
+    value: String(item.id),
+  }));
 
   const tags: any = useRef([]);
   const tokenOption = useRef(getTokenHeader());
-
-  useEffect(() => {
-    axios
-      .get('/api/tag')
-      .then((res: any) => {
-        const { list } = res.data.data;
-        const labelValueList = list.map((item: any) => ({
-          label: item.label,
-          value: String(item.id),
-        }));
-        setTagList(labelValueList);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
 
   const onCreateNote = () => {
     const body = {
@@ -98,7 +89,7 @@ export default function CreateNote() {
             placeholder='请添加标签'
             onChange={onAddTag}
             optionFilterProp='label'
-            options={tagList}
+            options={tagOptions}
           />
         </Form.Item>
 

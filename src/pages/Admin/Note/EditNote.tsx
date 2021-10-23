@@ -1,17 +1,24 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { Form, Input, Button, Select } from 'antd';
 import axios from 'axios';
 import MDEditor from '@uiw/react-md-editor';
 import getTokenHeader from '@/utils/getTokenHeader';
 import showFeedback from '@/utils/showFeedback';
+import TagContext from '@/utils/context/TagContext';
 
 export default function EditNote() {
   const { noteId } = useParams<{ noteId: string }>();
 
   const [form] = Form.useForm();
   const [markdownText, setMarkdownText] = useState('');
-  const [tagList, setTagList] = useState([]);
+
+  const tagList = useContext(TagContext);
+
+  const tagOptions = tagList.map((item: any) => ({
+    label: item.label,
+    value: String(item.id),
+  }));
 
   const tags: any = useRef([]);
   const tokenOption = useRef(getTokenHeader());
@@ -61,22 +68,6 @@ export default function EditNote() {
 
   useEffect(() => {
     axios
-      .get('/api/tag')
-      .then((res: any) => {
-        const { list } = res.data.data;
-        const labelValueList = list.map((item: any) => ({
-          label: item.label,
-          value: String(item.id),
-        }));
-        setTagList(labelValueList);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  useEffect(() => {
-    axios
       .get(`/api/note/${noteId}`)
       .then((res: any) => {
         const note = res.data.data.info;
@@ -122,7 +113,7 @@ export default function EditNote() {
             placeholder='请添加标签'
             onChange={onAddTag}
             optionFilterProp='label'
-            options={tagList}
+            options={tagOptions}
           />
         </Form.Item>
 
