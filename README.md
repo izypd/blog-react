@@ -94,3 +94,9 @@ pnpm add @uiw/react-md-editor
 pnpm add react-compare-image
 ```
 
+- [ ] 取消brotli压缩
+
+```shell
+pnpm rm -D vite-plugin-compression
+```
+

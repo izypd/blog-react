@@ -41,7 +41,6 @@ specifiers:
   stylelint-config-standard: ^22.0.0
   typescript: ^4.3.2
   vite: ^2.6.0
-  vite-plugin-compression: ^0.3.5
   vite-plugin-prismjs: ^0.0.8
   vite-plugin-style-import: ^1.2.1
   vite-plugin-windicss: ^1.4.9
@@ -91,7 +90,6 @@ devDependencies:
   stylelint-config-standard: registry.nlark.com/stylelint-config-standard/22.0.0_stylelint@13.13.1
   typescript: registry.npmmirror.com/typescript/4.4.3
   vite: registry.npmmirror.com/vite/2.6.2
-  vite-plugin-compression: registry.npmmirror.com/vite-plugin-compression/0.3.5_vite@2.6.2
   vite-plugin-style-import: registry.nlark.com/vite-plugin-style-import/1.2.1_vite@2.6.2
   vite-plugin-windicss: registry.npmmirror.com/vite-plugin-windicss/1.4.9_typescript@4.4.3+vite@2.6.2
   windicss: registry.npmmirror.com/windicss/3.1.8
@@ -9883,22 +9881,6 @@ packages:
       unist-util-stringify-position: registry.nlark.com/unist-util-stringify-position/3.0.0
       vfile-message: registry.nlark.com/vfile-message/3.0.2
     dev: false
-
-  registry.npmmirror.com/vite-plugin-compression/0.3.5_vite@2.6.2:
-    resolution: {integrity: sha1-HlM460PmASjebW8isqq/Dj3AwX8=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite-plugin-compression/download/vite-plugin-compression-0.3.5.tgz}
-    id: registry.npmmirror.com/vite-plugin-compression/0.3.5
-    name: vite-plugin-compression
-    version: 0.3.5
-    peerDependencies:
-      vite: '>=2.0.0'
-    dependencies:
-      chalk: registry.nlark.com/chalk/4.1.2
-      debug: registry.nlark.com/debug/4.3.2
-      fs-extra: registry.nlark.com/fs-extra/10.0.0
-      vite: registry.npmmirror.com/vite/2.6.2
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
 
   registry.npmmirror.com/vite-plugin-prismjs/0.0.8_prismjs@1.25.0:
     resolution: {integrity: sha1-EkzYVzM9MWC0myNICt48PtLE1T8=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite-plugin-prismjs/download/vite-plugin-prismjs-0.0.8.tgz}

@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react'
 import path from 'path';
 // import styleImport from 'vite-plugin-style-import';
 import WindiCSS from 'vite-plugin-windicss';
-import viteCompression from 'vite-plugin-compression';
 import prismjsPlugin from 'vite-plugin-prismjs';
 
 // https://vitejs.dev/config/
@@ -31,10 +30,6 @@ export default defineConfig({
     //   ],
     // }),
     WindiCSS(),
-    viteCompression({
-      ext: '.br',
-      algorithm: 'brotliCompress',
-    }),
     prismjsPlugin({
       languages: [
         'javascript',
