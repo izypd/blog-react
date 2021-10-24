@@ -1,8 +1,10 @@
 import ReactCompareImage from 'react-compare-image';
+import Header from '@/components/Header';
 
 export default function PWGAN() {
   return (
-    <div>
+    <>
+      <Header />
       <div className='text-center pt-8 text6'>PWGAN 结果展示</div>
       <div className='icon_grid'>
         <div className='icon_group'>
@@ -234,6 +236,6 @@ export default function PWGAN() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -22,7 +22,7 @@ export default defineConfig({
     note_width: 'max-w-50rem mx-auto',
     note_title: 'flex_center_p0 note_width flex-col space-y-4 mb-4',
     user: 'max-w-20rem mx-8 mt-8 p-8 bg-white border-2 border-solid rounded-2xl border-gray-200',
-    user_layout: 'bg_mi flex_center_p0 flex-col h-screen',
+    user_layout: 'flex_center_p0 flex-col h-screen',
     admin_button: 'flex flex-row items-center justify-start space-x-2 p-2',
     icon_size: 'w-48 h-48',
     icon_group: 'flex flex-col space-y-8',

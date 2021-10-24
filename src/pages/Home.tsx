@@ -19,9 +19,9 @@ export default function Home() {
   }
 
   return (
-    <div className='bg_mi'>
+    <>
       <Header />
       <InfiniteNote tagId={tagIdNumber} />
-    </div>
+    </>
   );
 }

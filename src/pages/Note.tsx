@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 export default function Note() {
   const { noteId } = useParams<{ noteId: string }>();
   return (
-    <div className='bg_mi min-h-screen'>
+    <div className='min-h-screen'>
       <Header />
       <NoteInfo noteId={Number(noteId)} />
       <Footer />

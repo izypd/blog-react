@@ -2,7 +2,7 @@ import { Result, Button } from 'antd';
 
 export default function NotFound() {
   return (
-    <div className='bg_mi flex_center_p0 min-h-screen'>
+    <div className='flex_center_p0 min-h-screen'>
       <Result
         status='404'
         title='没有该页面'
