@@ -24,7 +24,7 @@ export default function App() {
         <Route
           path='/admin'
           render={() => {
-            document.title = '管理';
+            document.title = '管理 - 言语之庭';
             return <Admin />;
           }}
         />
@@ -34,7 +34,7 @@ export default function App() {
       <Route
         path='/admin'
         render={() => {
-          document.title = '没有该页面';
+          document.title = '没有该页面 - 言语之庭';
           return <NotFound />;
         }}
       />
@@ -72,14 +72,14 @@ export default function App() {
             <Route
               path='/cv'
               render={() => {
-                document.title = '关于';
+                document.title = '关于 - 言语之庭';
                 return <CV />;
               }}
             />
             <Route
               path='/pwgan'
               render={() => {
-                document.title = 'PWGAN';
+                document.title = 'PWGAN - 言语之庭';
                 return <PWGAN />;
               }}
             />
@@ -89,14 +89,14 @@ export default function App() {
             <Route
               path='/login'
               render={() => {
-                document.title = '登录';
+                document.title = '登录 - 言语之庭';
                 return <Login />;
               }}
             />
             <Route
               path='/register'
               render={() => {
-                document.title = '注册';
+                document.title = '注册 - 言语之庭';
                 return <Register />;
               }}
             />
@@ -104,7 +104,7 @@ export default function App() {
             <Route
               path='*'
               render={() => {
-                document.title = '没有该页面';
+                document.title = '没有该页面 - 言语之庭';
                 return <NotFound />;
               }}
             />

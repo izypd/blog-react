@@ -44,7 +44,7 @@ export default function Admin() {
             exact
             path='/admin/note/create'
             render={() => {
-              document.title = '新增笔记';
+              document.title = '新增笔记 - 言语之庭';
               return <CreateNote />;
             }}
           />
@@ -52,7 +52,7 @@ export default function Admin() {
             exact
             path='/admin/note/manage'
             render={() => {
-              document.title = '管理笔记';
+              document.title = '管理笔记 - 言语之庭';
               return <ManageNote />;
             }}
           />
@@ -60,7 +60,7 @@ export default function Admin() {
             exact
             path='/admin/note/edit/:noteId'
             render={() => {
-              document.title = '编辑笔记';
+              document.title = '编辑笔记 - 言语之庭';
               return <EditNote />;
             }}
           />

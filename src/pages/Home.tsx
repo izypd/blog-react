@@ -14,7 +14,7 @@ export default function Home() {
     const tagList = useContext(TagContext);
     const tagNow: any = tagList.find((tag: ITag) => tag.id === tagIdNumber);
     if (tagNow) {
-      document.title = `${tagNow.label} | 标签`;
+      document.title = `${tagNow.label} - 标签 - 言语之庭`;
     }
   }
 

@@ -18,7 +18,7 @@ export default function NoteInfo({ noteId }: any) {
       .then((res: any) => {
         const note = res.data.data.info;
         setTitle(note.title);
-        document.title = note.title;
+        document.title = `${note.title} - 言语之庭`;
         setTime(getTimeDistance(note.createTime, note.updateTime));
         const tagList = note.tags.map((tag: ITag) => (
           <TagItem tag={tag} classStr='text-base' />
