@@ -100,3 +100,9 @@ pnpm add react-compare-image
 pnpm rm -D vite-plugin-compression
 ```
 
+- [ ] 添加gzip压缩
+
+```shell
+pnpm add -D vite-plugin-compression
+```
+

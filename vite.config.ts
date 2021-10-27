@@ -1,11 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path';
-// import styleImport from 'vite-plugin-style-import';
 import WindiCSS from 'vite-plugin-windicss';
 import prismjsPlugin from 'vite-plugin-prismjs';
+import viteCompression from 'vite-plugin-compression';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   server: {
     proxy: {
@@ -18,17 +17,6 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    // styleImport({
-    //   libs: [
-    //     {
-    //       libraryName: 'antd',
-    //       esModule: true,
-    //       resolveStyle: (name) => {
-    //         return `antd/es/${name}/style/index`;
-    //       },
-    //     },
-    //   ],
-    // }),
     WindiCSS(),
     prismjsPlugin({
       languages: [
@@ -49,11 +37,15 @@ export default defineConfig({
       theme: 'solarizedlight',
       css: true,
     }),
+    viteCompression(),
   ],
   resolve: {
     alias: [
       { find: /^~/, replacement: path.resolve(__dirname, './') },
       { find: '@', replacement: path.resolve(__dirname, 'src') },
     ],
+  },
+  build: {
+    target: 'esnext',
   },
 });
