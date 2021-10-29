@@ -106,3 +106,5 @@ pnpm rm -D vite-plugin-compression
 pnpm add -D vite-plugin-compression
 ```
 
+- [ ] Rollup的CommonJS plugin有bug，导致导入CommonJS方式编写的库的时候，编译后的静态文件在生产环境出现[Minified React error 130](https://reactjs.org/docs/error-decoder.html/?invariant=130&args[]=object&args[]=)。Vite使用Rollup打包，故有bug，改用webpack的版本[blog-react-webpack](https://github.com/izypd/blog-react-webpack)
+
