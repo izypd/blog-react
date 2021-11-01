@@ -106,5 +106,10 @@ pnpm rm -D vite-plugin-compression
 pnpm add -D vite-plugin-compression
 ```
 
-- [ ] Rollup的CommonJS plugin有bug，导致导入CommonJS方式编写的库的时候，编译后的静态文件在生产环境出现[Minified React error 130](https://github.com/vitejs/vite/issues/2139)。Vite使用Rollup打包，故有bug，改用webpack的版本[blog-react-webpack](https://github.com/izypd/blog-react-webpack)
+- [ ] PWGAN页使用的react-compare-image库，编译后的静态文件在生产环境出现[Minified React error 130](https://github.com/vitejs/vite/issues/2139)，改用@img-comparison-slider/react
+
+```
+pnpm rm react-compare-image
+pnpm add @img-comparison-slider/react
+```
 
