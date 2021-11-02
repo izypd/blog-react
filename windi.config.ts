@@ -1,4 +1,5 @@
 import { defineConfig } from 'windicss/helpers';
+import defaultTheme from 'windicss/defaultTheme';
 
 export default defineConfig({
   shortcuts: {
@@ -39,6 +40,12 @@ export default defineConfig({
       base3: ['0.75rem', '0.75rem'],
       md3: ['1.5rem', '1.5rem'],
       xl3: ['2.25rem', '2.25rem'],
+    },
+    extend: {
+      fontFamily: {
+        ...defaultTheme.fontFamily,
+        sans: ['LXGW WenKai', ...defaultTheme.fontFamily.sans],
+      },
     },
   },
   extract: {
