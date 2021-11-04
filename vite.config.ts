@@ -26,6 +26,7 @@ export default defineConfig({
         'typescript',
         'python',
         'bash',
+        'json',
       ],
       plugins: [
         'toolbar',
