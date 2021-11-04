@@ -8,7 +8,7 @@ export default function NoteCard({ info }: any) {
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${info.imgUrl})`,
       }}>
-      <div className='text6'>{info.title}</div>
+      <div className='text6 text-center'>{info.title}</div>
       <div className='logo'>
         <div className='logo_half'>
           <Icon icon='icon-park-outline:time' className='wh4' />

@@ -32,9 +32,9 @@ export default function NoteInfo({ noteId }: any) {
   }, []);
 
   return (
-    <div>
+    <div className='mx-4'>
       <div className='note_title'>
-        <div className='text-base6 md:text-md6'>{title}</div>
+        <div className='text-base6 md:text-md6 text-center'>{title}</div>
         <div className='logo_fix'>
           <div className='logo_half_fix'>
             <Icon icon='icon-park-outline:time' className='w-4 h-4' />
