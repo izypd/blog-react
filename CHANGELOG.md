@@ -118,3 +118,7 @@ pnpm add @img-comparison-slider/react
 添加 CHANGELOG.md ，更新 README.md ；主图标放到 cdn 上
 
 笔记页添加左右 margin ；笔记标题居中；页脚改成两栏
+
+# 21-11-07
+
+修改README.md
