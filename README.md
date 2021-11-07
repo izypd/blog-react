@@ -37,8 +37,7 @@
 
 ![](https://cdn.jsdelivr.net/gh/izypd/Gauss@main/blog/shot/pc_note.jpg)
 
-<img src="https://cdn.jsdelivr.net/gh/izypd/Gauss@main/blog/shot/mobile_home.png" width="49%" height="49%">
-<img src="https://cdn.jsdelivr.net/gh/izypd/Gauss@main/blog/shot/mobile_note.png" width="49%" height="49%">
+<img src="https://cdn.jsdelivr.net/gh/izypd/Gauss@main/blog/shot/mobile_home.png" width="49%" height="49%"> <img src="https://cdn.jsdelivr.net/gh/izypd/Gauss@main/blog/shot/mobile_note.png" width="49%" height="49%">
 
 ## 开发
 
