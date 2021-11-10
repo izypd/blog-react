@@ -21,7 +21,7 @@ export default function NoteInfo({ noteId }: any) {
         document.title = `${note.title} - 言语之庭`;
         setTime(getTimeDistance(note.createTime, note.updateTime));
         const tagList = note.tags.map((tag: ITag) => (
-          <TagItem tag={tag} classStr='text-base' />
+          <TagItem tag={tag} classStr='text-base4' />
         ));
         setTagComponent(<div>{tagList}</div>);
         setMarkdown(note.content);
@@ -38,7 +38,7 @@ export default function NoteInfo({ noteId }: any) {
         <div className='logo_fix'>
           <div className='logo_half_fix'>
             <Icon icon='icon-park-outline:time' className='w-4 h-4' />
-            <div className='text-base'>{time}</div>
+            <div className='text-base4'>{time}</div>
           </div>
           <div className='logo_half_fix'>
             <Icon icon='icon-park-outline:tag' className='w-4 h-4' />
